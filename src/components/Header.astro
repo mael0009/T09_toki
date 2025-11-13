@@ -1,0 +1,68 @@
+---
+
+---
+
+<header class="site-header">
+  <div class="header-inner">
+    <!-- Mobil menu-knap -->
+    <button class="menu-toggle" id="menu-toggle" aria-label="Åbn menu">
+      <span class="menu-icon">
+        <span></span>
+        <span></span>
+      </span>
+      <span class="menu-text">menu</span>
+    </button>
+
+    <!-- Venstre navigation -->
+    <nav class="nav-left" id="nav-left" aria-label="Hovednavigation">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="#">Cases</a></li>
+        <li><a href="#">Tóki Flow</a></li>
+      </ul>
+    </nav>
+
+    <!-- Midterlogo -->
+    <div class="logo-wrap">
+      <a href="/" class="logo-link" aria-label="Gå til forsiden">
+        <img src="/toki-logo.png" alt="Tóki logo" class="logo-img" />
+      </a>
+    </div>
+
+    <!-- Højre søgefelt -->
+    <div class="search-right" role="search" aria-label="Søg på siden">
+      <form action="/search" method="get" class="search-form" onsubmit="return true;">
+        <input type="text" name="q" placeholder="Søg..." aria-label="Søg" class="search-input" />
+        <button type="submit" class="search-btn" aria-label="Start søgning">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
+            <path d="M11 19a8 8 0 1 1 0-16 8 8 0 0 1 0 16zm7.707 1.293-4.387-4.387" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Lille inline script, som kun styrer menuen -->
+  <script is:inline>
+    const toggle = document.getElementById("menu-toggle");
+    const nav = document.getElementById("nav-left");
+
+    toggle.addEventListener("click", () => {
+      nav.classList.toggle("open");
+      toggle.classList.toggle("active");
+    });
+  </script>
+</header>
+
+<style>
+  @font-face {
+    font-family: "OpenSans";
+    src: url("/font/Open_Sans/OpenSans-VariableFont_wdth\,wght.ttf");
+    font-weight: 350;
+    font-style: normal;
+  }
+
+  .site-header {
+    font-family: "OpenSans";
+  }
+</style>
