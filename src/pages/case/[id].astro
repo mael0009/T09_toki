@@ -1,4 +1,6 @@
 ---
+import Layout from '../../layouts/Layout.astro';
+
 export async function getStaticPaths() {
   const response = await fetch("https://sfkiytfrnmwhihljfcxl.supabase.co/rest/v1/cases",{
     method:"GET",
@@ -19,4 +21,9 @@ return data.map((post) => {
 const { id } = Astro.params;
 const { post } = Astro.props;
 ---
-<h1>{id}: {post.brand_name}</h1>
+
+<Layout>
+<h1>{post.brand_name}</h1>
+<h2>{post.product_name}</h2>
+<p>{post.description}</p>
+</Layout>

@@ -1,0 +1,21 @@
+---
+const {data} = Astro.props;
+---
+<a href=`/case/${data.id}`>
+<article>
+    <p>IMAGE</p>
+    <h2>{data.brand_name}</h2>
+    <h3>{data.product_name}</h3>
+</article>
+</a>
+
+<style>
+    article {
+        padding: 2rem;
+        background-color: rgb(221, 162, 162);
+        border-radius: 15px;
+    }
+    article :hover {
+        transform: scale(1.03);
+    }
+</style>
