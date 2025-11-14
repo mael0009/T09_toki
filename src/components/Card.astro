@@ -1,21 +1,46 @@
 ---
 const {data} = Astro.props;
 ---
-<a href=`/case/${data.id}`>
+
 <article>
-    <p>IMAGE</p>
+    <a href=`/case/${data.id}`>
+        <img src=`https://sfkiytfrnmwhihljfcxl.supabase.co/storage/v1/object/public/Toki/${data.image}` alt="case image"/>
+    </a>
+    <div class="name">
     <h2>{data.brand_name}</h2>
     <h3>{data.product_name}</h3>
+    </div>
 </article>
-</a>
+
 
 <style>
     article {
         padding: 2rem;
-        background-color: rgb(221, 162, 162);
         border-radius: 15px;
     }
-    article :hover {
-        transform: scale(1.03);
+    a {
+        display: block;
+        text-decoration: none;
+        color: inherit;
+        transition: transform 0.3s ease;
+    }
+    a:hover {
+        transform: scale(1.05);
+    }
+    .name {
+        padding-left: 2rem;
+    }
+    h2 {
+        font-weight: 300;
+        display: inline-block;
+        padding-bottom: 0.25rem;
+        border-bottom: 0.5px solid black;
+        margin: 0;
+    }
+    h3 {
+        color: #D8A8a0;
+        font-weight: 400;
+        margin: 0;
+        margin-top: 0.50rem;
     }
 </style>

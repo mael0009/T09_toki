@@ -23,7 +23,76 @@ const { post } = Astro.props;
 ---
 
 <Layout>
-<h1>{post.brand_name}</h1>
-<h2>{post.product_name}</h2>
-<p>{post.description}</p>
+    <main>
+        <div class="crumbs">
+        <a href="/">HOME</a>
+        <span>></span>
+        <a href="/cases">CASES</a>
+        <span>></span>
+        <span>{post.brand_name}</span>
+        </div>
+        <div class="grid">
+        <div>
+            <img src=`https://sfkiytfrnmwhihljfcxl.supabase.co/storage/v1/object/public/Toki/${post.image}` alt="case image"/>
+        </div>
+        <div>
+            <h1>{post.brand_name}</h1>
+            <h2>{post.product_name}</h2>
+            <h3>Case details</h3>
+            <p>{post.description}</p>
+        </div>
+        </div>
+    </main> 
 </Layout>
+
+<style>
+    main {
+        margin: 6rem;
+    }
+    @media (min-width: 1000px){
+        .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        justify-items: right;
+        gap: 2rem;
+        }
+    }
+    .crumbs {
+        color: grey;
+        font-size: 0.8rem;
+        padding-left: 12rem;
+    }
+    .crumbs a {
+        text-decoration: none;
+        color: grey;
+    }
+    .crumbs a:hover {
+        text-decoration: underline;
+    }
+    h1 {
+        font-weight: lighter;
+        margin: 0;
+    }
+    h2 {
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        font-size: xx-large;
+        font-weight: lighter;
+        margin: 0;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+    }
+    h3 {
+        color: #D8A8a0;
+        font-weight: 300;
+        display: block;
+        border-bottom: 0.5px solid rgb(0, 0, 0);
+        padding-bottom: 0.5rem;
+        width: 50%;
+        margin: 0;
+    }
+    p {
+        padding-right: 10rem;
+        line-height: 150%;
+        display: block;
+    }
+</style>

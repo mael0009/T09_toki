@@ -9,6 +9,10 @@ body {
   font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
 }
 
+main {
+  margin: 6rem;
+}
+
 /* Header layout */
 .site-header {
   background: transparent;
