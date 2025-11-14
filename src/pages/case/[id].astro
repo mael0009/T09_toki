@@ -1,9 +1,14 @@
 ---
 export async function getStaticPaths() {
-  const response = await fetch('...');
-  const data = await response.json();
+  const response = await fetch("https://sfkiytfrnmwhihljfcxl.supabase.co/rest/v1/cases",{
+    method:"GET",
+    headers: {
+        apikey:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNma2l5dGZybm13aGlobGpmY3hsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjMwMjgwMDEsImV4cCI6MjA3ODYwNDAwMX0.A_ptC_G7EWu7ekTDk_NTYkXcqNyuLuiCnONiGLONjUw"
+    }
+});
+const data = await response.json();
 
-  return data.map((post) => {
+return data.map((post) => {
     return {
       params: { id: post.id },
       props: { post },
@@ -14,4 +19,4 @@ export async function getStaticPaths() {
 const { id } = Astro.params;
 const { post } = Astro.props;
 ---
-<h1>{id}: {post.name}</h1>
+<h1>{id}: {post.brand_name}</h1>
