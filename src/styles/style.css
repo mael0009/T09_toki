@@ -208,3 +208,121 @@ body {
     transform: rotate(-45deg) translateY(-4px);
   }
 }
+
+/* FOOTER */
+
+/* === Footer styles === */
+
+.site-footer {
+  background: #a8c6b6;
+  padding: 32px 24px;
+  color: #ffffff;
+  margin-top: 24px;
+}
+
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 24px;
+  align-items: center;
+}
+
+/* Kolonner */
+.footer-col.left {
+  text-align: left;
+}
+.footer-col.center {
+  text-align: center;
+}
+.footer-col.right {
+  text-align: right;
+}
+
+/* CTA-overskrift til venstre */
+.footer-cta {
+  margin: 0 0 14px 0;
+  font-family: "Georgia", serif; /* du kan ændre til din font */
+  font-size: 28px;
+  line-height: 1.05;
+  color: #fff;
+  font-weight: 700;
+}
+
+/* Email input + copy */
+.email-box {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  padding: 8px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.email-input {
+  border: none;
+  background: transparent;
+  color: #fff;
+  padding: 6px 8px;
+  font-size: 16px;
+  min-width: 260px;
+}
+
+.email-input:focus {
+  outline: none;
+}
+
+.copy-btn {
+  background: #fff;
+  color: #222;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+/* Midter meta */
+.meta {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 14px;
+}
+
+/* Sociale ikoner */
+.social {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Responsivt: på små skærme stable kolonner */
+@media (max-width: 880px) {
+  .footer-inner {
+    grid-template-columns: 1fr;
+    text-align: left;
+    gap: 18px;
+  }
+  .footer-col.center,
+  .footer-col.right {
+    text-align: left;
+  }
+  .email-input {
+    min-width: 180px;
+  }
+}
