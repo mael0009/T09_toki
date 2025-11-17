@@ -49,18 +49,27 @@ const { post } = Astro.props;
     main {
         margin: 6rem;
     }
-    @media (min-width: 1000px){
+    @media (min-width: 980px){
         .grid {
         display: grid;
         grid-template-columns: 1fr 1fr;
         justify-items: right;
         gap: 2rem;
         }
+        p {
+        padding-right: 10rem;
+        display: block;
+        }
+        .crumbs {
+            padding-left: 12rem;
+        }
+    }
+    p {
+        line-height: 150%;
     }
     .crumbs {
         color: grey;
         font-size: 0.8rem;
-        padding-left: 12rem;
     }
     .crumbs a {
         text-decoration: none;
@@ -89,10 +98,5 @@ const { post } = Astro.props;
         padding-bottom: 0.5rem;
         width: 50%;
         margin: 0;
-    }
-    p {
-        padding-right: 10rem;
-        line-height: 150%;
-        display: block;
     }
 </style>
