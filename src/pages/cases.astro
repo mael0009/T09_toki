@@ -1,0 +1,30 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
+
+const res = await fetch("https://sfkiytfrnmwhihljfcxl.supabase.co/rest/v1/cases",{
+    method:"GET",
+    headers: {
+        apikey:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNma2l5dGZybm13aGlobGpmY3hsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjMwMjgwMDEsImV4cCI6MjA3ODYwNDAwMX0.A_ptC_G7EWu7ekTDk_NTYkXcqNyuLuiCnONiGLONjUw"
+    }
+});
+
+const data = await res.json();
+console.log(data);
+
+---
+
+<Layout>
+    <h1>Cases</h1>
+    <div class="grid">
+    {data.map((caseItem)=> <Card data={caseItem}/>)}
+    </div>
+</Layout>
+
+<style>
+    .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+    }
+</style>
