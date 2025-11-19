@@ -2,16 +2,406 @@
 import Layout from "../layouts/Layout.astro";
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
-  </head>
+<Layout>
+  <div class="hero1">
+    <img src="/public/forside.png" alt="hero" />
+    <h2>
+      <span class="bold">Packaging with purpose.</span>
+      <br />
+      Built on strategy, story and <br />
+      sustainability.
+    </h2>
+  </div>
 
-  <body>
-    <Layout />
-  </body>
-</html>
+  <main>
+    <!-- WHAT WE DELIVER -->
+    <h1 class="deliver_h1">What we deliver</h1>
+    <hr />
+
+    <section class="grid1_1_1">
+      <div>
+        <h3>Strategic Packaging Design</h3>
+        <p>
+          From material choices to <br />
+          structural concepts that <br />
+          support logistics, cost, and <br />
+          brand positioning.
+        </p>
+      </div>
+
+      <div>
+        <h3>Visual & Brand Expression</h3>
+        <p>
+          Identity systems, storytelling <br />
+          and packaging aesthetics <br />
+          that differentiate on shelf <br />
+          and online.
+        </p>
+      </div>
+
+      <div>
+        <h3>
+          Sustainable Packaging <br />
+          Consultancy
+        </h3>
+        <p>
+          Guidance and <br />
+          implementation of lower- <br />
+          impact packaging solutions <br />
+          across the supply chain.
+        </p>
+      </div>
+    </section>
+
+    <section class="toki_forside">
+      <div class="forside_grid">
+        <div class="flow_text_top">
+          <h1 class="bigger_h1"><span class="pink">TóKi</span> Flow</h1>
+          <p>
+            Our process moves from <br />
+            understanding your brand <br />
+            and market to shaping your
+          </p>
+        </div>
+
+        <div class="flow_img">
+          <img src="/public/flow_forside.png" alt="flow" />
+        </div>
+
+        <div class="flow_text_bottom">
+          <p>
+            Want to see if we’re the right fit? <br />
+            Let’s talk.
+            <button class="readmore_btn">Read more</button>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- OUR WORK -->
+    <section class="our_work">
+      <h1><span class="pink">Our Work.</span> A collection of our cases</h1>
+
+      <div class="cases-wrapper">
+        <button class="arrow left">
+          <img src="/public/arrow-left.png" alt="left arrow" />
+        </button>
+
+        <img class="case-image" src="/public/case.png" alt="case" />
+
+        <button class="arrow right">
+          <img src="/public/arrow-right.png" alt="right arrow" />
+        </button>
+      </div>
+
+      <button class="case_btn">Our cases</button>
+    </section>
+
+    <!-- GET IN TOUCH -->
+    <section class="contact">
+      <h1><span class="pink">Get</span> in touch</h1>
+      <h2>We would love to hear what you are working on</h2>
+
+      <div class="contact_grid">
+        <div class="contact_left">
+          <h3>Email us directly:</h3>
+          <p>hello@toki.house.com</p>
+        </div>
+
+        <img class="divider" src="/public/linje.png" alt="linje" />
+
+        <div class="contact_right">
+          <h3>Prefer to talk live?</h3>
+          <button class="contact_btn">Book an introduction call</button>
+          <p>(30 min video or phone call)</p>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  /* HERO */
+  .hero1 {
+    position: relative; /* gør det muligt at placere h2 ovenpå */
+    width: 100%;
+  }
+
+  .hero1 img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .hero1 h2 {
+    position: absolute; /* læg h2 ovenpå billedet */
+    top: 20%; /* afstand fra toppen af billedet */
+    left: 40px; /* afstand fra venstre */
+    color: white; /* hvid tekst */
+    font-size: 42px;
+    font-weight: lighter;
+    line-height: 1.2;
+    max-width: 600px; /* så teksten ikke fylder hele billedet */
+    font-family: "Georgia";
+  }
+
+  .bold {
+    font-weight: bold;
+  }
+
+  /* WHAT WE DELIVER */
+
+  .deliver_h1 {
+    text-align: center;
+    font-family: "Georgia";
+    font-weight: lighter;
+  }
+
+  .grid1_1_1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+    font-family: "OpenSans";
+    padding-bottom: 10rem;
+  }
+
+  /* TOKI FLOW */
+
+  .toki_forside {
+    border: 1px solid black;
+    border-radius: 50px;
+    padding: 40px 60px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .forside_grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+  }
+
+  /* Øverste tekstblok */
+  .flow_text_top h1 {
+    font-family: "Georgia";
+    margin-bottom: 20px;
+  }
+
+  .flow_text_top p {
+    font-family: "OpenSans";
+    font-size: larger;
+  }
+
+  /* Billedet */
+  .flow_img img {
+    width: 100%;
+    max-width: 450px;
+    display: block;
+    position: relative;
+    top: 70px;
+  }
+
+  /* Nederste tekstblok */
+  .flow_text_bottom p {
+    font-family: "OpenSans";
+    font-size: larger;
+    margin-top: 20px;
+  }
+
+  .readmore_btn {
+    background-color: #d8a8a0;
+    padding: 7px 12px;
+    border-radius: 5px;
+    border: 1px solid black;
+    font-family: "OpenSans";
+    font-size: medium;
+    cursor: pointer;
+  }
+
+  .readmore_btn:hover {
+    background-color: #e4c6bd;
+    color: black;
+  }
+
+  /* Farveklassen */
+  .pink {
+    color: #d8a8a0;
+  }
+
+  @font-face {
+    font-family: "OpenSans";
+    src: url("/font/Open_Sans/OpenSans-VariableFont_wdth\,wght.ttf");
+  }
+
+  .toki_forside p {
+    font-family: "OpenSans";
+    font-size: larger;
+  }
+
+  /* OUR WORK */
+
+  .our_work {
+    text-align: center;
+    padding: 60px 0;
+    font-family: "Georgia";
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+  }
+
+  /* wrapper til billede + pile */
+  .cases-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 40px 0;
+  }
+
+  /* selve billedet */
+  .case-image {
+    width: 400px;
+  }
+
+  /* piletaster */
+  .arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #f6f5ea;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.2s ease;
+  }
+
+  /* venstre pil */
+  .arrow.left {
+    left: 250px;
+  }
+
+  /* højre pil */
+  .arrow.right {
+    right: 250px;
+  }
+
+  .arrow:hover {
+    background: #f8f8f8;
+    border-color: #999;
+  }
+
+  .arrow img {
+    width: 20px;
+  }
+
+  .case_btn {
+    background-color: #d8a8a0;
+    padding: 7px;
+    border-radius: 5px;
+    border: solid black;
+    border-width: 1px;
+    font-family: "OpenSans";
+    font-size: medium;
+  }
+
+  .case_btn:hover {
+    background-color: #e4c6bd;
+    color: black;
+  }
+
+  /* GET IN TOUCH */
+
+  .contact {
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 50px;
+    padding: 40px 60px;
+    max-width: 900px; /* ← Gør boksen smallere og flot */
+    margin: 0 auto; /* ← Centrerer den */
+    font-family: "Georgia";
+  }
+
+  .contact h1 {
+    margin-bottom: 10px;
+  }
+
+  .contact h2 {
+    margin-bottom: 40px;
+    font-weight: lighter;
+  }
+
+  .contact_grid {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr; /* midten til din linje */
+    align-items: center;
+    gap: 60px; /* afstand mellem left – line – right */
+    font-family: "OpenSans";
+  }
+
+  .contact_grid h3 {
+    font-weight: 600;
+  }
+
+  /* sørger for at linjen ikke bliver for stor */
+  .divider {
+    height: 180px;
+    width: auto;
+  }
+
+  /* fjern position-left/right */
+  .contact_left,
+  .contact_right {
+    text-align: center;
+  }
+
+  /* Knap-styling */
+  .contact_btn {
+    background-color: #d8a8a0;
+    padding: 7px 12px;
+    border-radius: 5px;
+    border: 1px solid black;
+    font-family: "OpenSans";
+    font-size: medium;
+  }
+
+  .contact_btn:hover {
+    background-color: #e4c6bd;
+    color: black;
+  }
+
+  /* MOBIL VERSION */
+  @media (max-width: 600px) {
+    .hero1 h2 {
+      top: 12%;
+      left: 20px;
+      font-size: 28px;
+    }
+    .grid1_1_1 {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .forside_grid {
+      display: grid;
+      grid-template-columns: 1fr;
+    }
+
+    .contact_grid {
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+
+    .divider {
+      display: none;
+    }
+
+    .contact {
+      padding: 30px 20px;
+    }
+  }
+</style>

@@ -6,7 +6,10 @@ html,
 body {
   margin: 0;
   padding: 0;
-  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+main {
+  margin: 6rem;
 }
 
 /* Header layout */
@@ -107,33 +110,6 @@ body {
   color: var(--text);
 }
 
-/* Små skærme (responsivt) */
-@media (max-width: 880px) {
-  .header-inner {
-    grid-template-columns: 1fr auto;
-  }
-  .nav-left {
-    display: none;
-  }
-  .search-right {
-    justify-content: flex-start;
-  }
-}
-
-@media (max-width: 480px) {
-  .logo-link {
-    width: 72px;
-    height: 72px;
-  }
-  .logo-img {
-    width: 54px;
-    height: 54px;
-  }
-  .search-input {
-    width: 140px;
-  }
-}
-
 /* === MOBIL BURGER MENU === */
 
 .menu-toggle {
@@ -169,53 +145,13 @@ body {
   letter-spacing: 0.2px;
 }
 
-/* Mobil styling */
-@media (max-width: 880px) {
-  .menu-toggle {
-    display: flex;
-    position: absolute;
-    left: 20px;
-    top: 22px;
-    z-index: 1001;
-  }
-
-  .nav-left {
-    display: none;
-    position: absolute;
-    top: 70px;
-    left: 0;
-    width: 100%;
-    background: var(--bg, #f6f5ea);
-    text-align: center;
-    padding: 20px 0;
-    border-top: 1px solid #ddd;
-  }
-
-  .nav-left.open {
-    display: block;
-  }
-
-  .nav-left ul {
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  /* Animation for menu-ikon */
-  .menu-toggle.active .menu-icon span:nth-child(1) {
-    transform: rotate(45deg) translateY(4px);
-  }
-  .menu-toggle.active .menu-icon span:nth-child(2) {
-    transform: rotate(-45deg) translateY(-4px);
-  }
-}
-
 /* FOOTER */
 
 /* === Footer styles === */
 
 .site-footer {
   background: #a8c6b6;
-  padding: 32px 24px;
+  padding: 32px 10px;
   color: #ffffff;
   margin-top: 24px;
 }
@@ -243,7 +179,7 @@ body {
 /* CTA-overskrift til venstre */
 .footer-cta {
   margin: 0 0 14px 0;
-  font-family: "Georgia", serif; /* du kan ændre til din font */
+  font-family: "Georgia", serif;
   font-size: 28px;
   line-height: 1.05;
   color: #fff;
@@ -311,7 +247,7 @@ body {
   text-decoration: none;
 }
 
-/* Responsivt: på små skærme stable kolonner */
+/* FOOTER RESPONSIV */
 @media (max-width: 880px) {
   .footer-inner {
     grid-template-columns: 1fr;
@@ -324,5 +260,72 @@ body {
   }
   .email-input {
     min-width: 180px;
+  }
+}
+
+/* HEADER RESPONSIV */
+@media (max-width: 880px) {
+  .header-inner {
+    grid-template-columns: 1fr auto;
+  }
+  .nav-left {
+    display: none;
+  }
+  .search-right {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo-link {
+    width: 72px;
+    height: 72px;
+  }
+  .logo-img {
+    width: 54px;
+    height: 54px;
+  }
+  .search-input {
+    width: 140px;
+  }
+}
+
+/* MENU RESPONSIV */
+@media (max-width: 880px) {
+  .menu-toggle {
+    display: flex;
+    position: absolute;
+    left: 20px;
+    top: 22px;
+    z-index: 1001;
+  }
+
+  .nav-left {
+    display: none;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background: var(--bg, #f6f5ea);
+    text-align: center;
+    padding: 20px 0;
+    border-top: 1px solid #ddd;
+  }
+
+  .nav-left.open {
+    display: block;
+  }
+
+  .nav-left ul {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  /* Animation for menu-ikon */
+  .menu-toggle.active .menu-icon span:nth-child(1) {
+    transform: rotate(45deg) translateY(4px);
+  }
+  .menu-toggle.active .menu-icon span:nth-child(2) {
+    transform: rotate(-45deg) translateY(-4px);
   }
 }
