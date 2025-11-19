@@ -15,16 +15,36 @@ console.log(data);
 ---
 
 <Layout>
-    <h1>Cases</h1>
+    <main>
+    <h1><span class="pink">OUR</span> WORK</h1>
+    <h2>A collection of our cases</h2>
     <div class="grid">
     {data.map((caseItem)=> <Card data={caseItem}/>)}
     </div>
+    </main>
 </Layout>
 
 <style>
     .grid {
         display: grid;
+        grid-template-columns: 1fr;
+        justify-items: center;
+    }
+    @media (min-width: 1000px){
+        .grid {
+        display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 2rem;
+        }
+    }
+    main {
+        margin: 6rem;
+    }
+    h1, h2 {
+        text-align: center;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        font-weight: lighter;
+    }
+    .pink {
+        color: #D8A8a0;
     }
 </style>
